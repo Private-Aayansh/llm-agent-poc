@@ -2,24 +2,24 @@ import { LLMProvider, Tool } from '../types';
 
 export const LLM_PROVIDERS: LLMProvider[] = [
   {
-    id: 'openai',
-    name: 'OpenAI',
-    models: ['gpt-4o', 'gpt-4o-mini', 'gpt-3.5-turbo'],
-  },
-  {
-    id: 'anthropic',
-    name: 'Anthropic',
-    models: ['claude-3-5-sonnet-20241022', 'claude-3-haiku-20240307'],
-  },
-  {
-    id: 'google',
-    name: 'Google',
-    models: ['gemini-1.5-pro', 'gemini-1.5-flash'],
-  },
+  id: 'openai',
+  name: 'OpenAI',
+  models: ['gpt-5', 'gpt-4.1', 'gpt-4o'],
+},
+{
+  id: 'anthropic',
+  name: 'Anthropic',
+  models: ['claude-opus-4.1', 'claude-sonnet-4'],
+},
+{
+  id: 'google',
+  name: 'Google',
+  models: ['gemini-2.5-pro', 'gemini-2.5-flash', 'gemini-2.5-flash-lite', 'gemini-2.5-deep-think'],
+},
   {
     id: 'aipipe',
     name: 'AIPipe',
-    models: ['openai/gpt-4.1-nano', 'openai/gpt-4o', 'openai/gpt-4o-mini', 'anthropic/claude-3-5-sonnet', 'google/gemini-pro'],
+    models: ['openai/gpt-4.1-nano', 'openai/gpt-4o', 'google/gemini-2.0-flash-lite'],
   },
 ];
 
