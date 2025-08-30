@@ -56,7 +56,7 @@ src/
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
+git clone https://github.com/Private-Aayansh/llm-agent-poc
 cd llm-agent-poc
 ```
 
@@ -190,14 +190,3 @@ The project is configured to deploy to GitHub Pages with the base path `/llm-age
 ## 📄 License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
-
-## 🙏 Acknowledgments
-
-- Built with [React](https://reactjs.org/) and [TypeScript](https://www.typescriptlang.org/)
-- Styled with [Tailwind CSS](https://tailwindcss.com/)
-- Icons by [Lucide React](https://lucide.dev/)
-- Powered by various LLM providers and APIs
-
----
-
-**Note**: This is a proof-of-concept project demonstrating multi-tool reasoning capabilities. API keys and sensitive data should be handled securely in production environments.
