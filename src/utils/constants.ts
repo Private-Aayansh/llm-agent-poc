@@ -19,7 +19,7 @@ export const LLM_PROVIDERS: LLMProvider[] = [
   {
     id: 'aipipe',
     name: 'AIPipe',
-    models: ['openai/gpt-4.1-nano', 'openai/gpt-4o', 'google/gemini-2.0-flash-lite'],
+    models: ['openai/gpt-4.1-nano', 'openai/gpt-4o', 'gemini-2.0-flash-lite'],
   },
 ];
 
