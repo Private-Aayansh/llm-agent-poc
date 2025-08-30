@@ -42,7 +42,7 @@ export class LLMService {
       case 'anthropic':
         return 'https://api.anthropic.com/v1/messages';
       case 'google':
-        return 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent';
+        return `https://generativelanguage.googleapis.com/v1beta/models/${this.model}:generateContent`;
       case 'aipipe':
         return 'https://aipipe.org/openrouter/v1/chat/completions';
       default:
