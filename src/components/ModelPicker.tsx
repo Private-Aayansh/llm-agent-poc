@@ -54,9 +54,14 @@ export default function ModelPicker({
                 type="password"
                 value={apiKey}
                 onChange={(e) => onApiKeyChange(e.target.value)}
-                placeholder="Enter your LLM API key"
+                placeholder={`Enter your ${selectedProviderData?.name} API key`}
                 className="w-full px-3 py-2 text-sm border border-neutral-200 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
               />
+              {selectedProvider === 'aipipe' && (
+                <p className="text-xs text-neutral-500 mt-1">
+                  Get your API key from <a href="https://aipipe.org/" target="_blank" rel="noopener noreferrer" className="text-primary-500 hover:underline">AIPipe.org</a>
+                </p>
+              )}
             </div>
 
             <div>

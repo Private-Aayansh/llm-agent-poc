@@ -43,6 +43,8 @@ export class LLMService {
         return 'https://api.anthropic.com/v1/messages';
       case 'google':
         return 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent';
+      case 'aipipe':
+        return 'https://aipipe.org/openrouter/v1/chat/completions';
       default:
         throw new Error(`Unsupported provider: ${this.provider}`);
     }
@@ -69,6 +71,11 @@ export class LLMService {
         return {
           ...baseHeaders,
           'x-goog-api-key': this.apiKey,
+        };
+      case 'aipipe':
+        return {
+          ...baseHeaders,
+          'Authorization': `Bearer ${this.apiKey}`,
         };
       default:
         return baseHeaders;
@@ -108,6 +115,19 @@ export class LLMService {
             parts: [{ text: msg.content }],
           })),
         };
+      case 'aipipe':
+        return {
+          model: this.model,
+          messages: messages.map(msg => ({
+            role: msg.role,
+            content: msg.content,
+            tool_calls: msg.tool_calls,
+            tool_call_id: msg.tool_call_id,
+            name: msg.name,
+          })),
+          tools: tools.length > 0 ? tools : undefined,
+          tool_choice: tools.length > 0 ? 'auto' : undefined,
+        };
       default:
         throw new Error(`Unsupported provider: ${this.provider}`);
     }
@@ -130,6 +150,14 @@ export class LLMService {
       case 'google':
         return {
           content: data.candidates?.[0]?.content?.parts?.[0]?.text || '',
+        };
+      case 'aipipe':
+        const aipipeChoice = data.choices?.[0];
+        if (!aipipeChoice) throw new Error('No response from AIPipe');
+        
+        return {
+          content: aipipeChoice.message?.content || '',
+          tool_calls: aipipeChoice.message?.tool_calls,
         };
       default:
         throw new Error(`Unsupported provider: ${this.provider}`);

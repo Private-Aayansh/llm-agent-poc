@@ -16,6 +16,11 @@ export const LLM_PROVIDERS: LLMProvider[] = [
     name: 'Google',
     models: ['gemini-1.5-pro', 'gemini-1.5-flash'],
   },
+  {
+    id: 'aipipe',
+    name: 'AIPipe',
+    models: ['openai/gpt-4.1-nano', 'openai/gpt-4o', 'openai/gpt-4o-mini', 'anthropic/claude-3-5-sonnet', 'google/gemini-pro'],
+  },
 ];
 
 export const TOOLS: Tool[] = [
