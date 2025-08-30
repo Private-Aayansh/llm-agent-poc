@@ -5,10 +5,10 @@ A proof-of-concept intelligent agent that demonstrates multi-tool reasoning capa
 ## 🚀 Features
 
 ### 🤖 Multi-Provider LLM Support
-- **OpenAI**: GPT-4o, GPT-4o-mini, GPT-3.5-turbo
-- **Anthropic**: Claude-3.5-sonnet, Claude-3-haiku
-- **Google**: Gemini-1.5-pro, Gemini-1.5-flash
-- **AIPipe**: Access to multiple models through unified API
+- **OpenAI**: gpt-5, gpt-4.1, gpt-4o
+- **Anthropic**: claude-opus-4.1, claude-sonnet-4
+- **Google**: gemini-2.5-pro, gemini-2.5-flash, gemini-2.5-flash-lite, gemini-2.5-deep-think
+- **AIPipe**: openai/gpt-4.1-nano, openai/gpt-4o, google/gemini-2.0-flash-lite-001
 
 ### 🛠️ Intelligent Tool System
 - **🔍 Google Search**: Real-time web search with live results
